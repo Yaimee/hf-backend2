@@ -1,7 +1,7 @@
 package com.example.hfbackend2.jwt.jwtutils;
 
-import com.example.easy0nhfbackend.jwt.models.JwtRequestModel;
-import com.example.easy0nhfbackend.jwt.models.JwtResponseModel;
+import com.example.hfbackend2.jwt.models.JwtRequestModel;
+import com.example.hfbackend2.jwt.models.JwtResponseModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;

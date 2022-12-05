@@ -1,6 +1,7 @@
 package com.example.hfbackend2.jwt.config;
-import com.example.easy0nhfbackend.jwt.jwtutils.JwtAuthenticationEntryPoint;
-import com.example.easy0nhfbackend.jwt.jwtutils.JwtFilter;
+
+import com.example.hfbackend2.jwt.jwtutils.JwtAuthenticationEntryPoint;
+import com.example.hfbackend2.jwt.jwtutils.JwtFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,7 +14,7 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
-
+// source: https://www.tutorialspoint.com/spring_security/spring_security_with_jwt.htm
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
