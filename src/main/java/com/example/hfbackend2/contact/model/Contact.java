@@ -1,11 +1,14 @@
 package com.example.hfbackend2.contact.model;
 
-import org.springframework.data.annotation.Id;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import javax.persistence.*;
 
+@Data
+@NoArgsConstructor
+@Entity
+@Table(name = "CONTACT")
 public class Contact {
 
     @Id
