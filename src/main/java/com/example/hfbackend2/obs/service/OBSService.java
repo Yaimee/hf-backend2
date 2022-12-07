@@ -1,7 +1,7 @@
-package com.example.hfbackend2.contact.service;
+package com.example.hfbackend2.obs.service;
 
-import com.example.hfbackend2.contact.model.Contact;
-import com.example.hfbackend2.contact.repository.ContactRepository;
+import com.example.hfbackend2.obs.model.OBS;
+import com.example.hfbackend2.obs.repository.OBSRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,25 +10,25 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @Service
-public class ContactService {
+public class OBSService {
 
-    private final ContactRepository repository;
+    private final OBSRepository repository;
 
-    public List<Contact> findAll() {
+    public List<OBS> findAll() {
         return repository.findAll();
     }
 
-    public Contact findById(Long id){
+    public OBS findById(Long id){
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("%d not found".formatted(id)));
     }
 
-    public Contact add(Contact object){
+    public OBS add(OBS object){
         return repository.save(object);
     }
 
-    public Contact update(Long id, Contact object, boolean partial){
-        Optional<Contact> temp =  repository.findById(id)
+    public OBS update(Long id, OBS object, boolean partial){
+        Optional<OBS> temp =  repository.findById(id)
                 .map(oldItem -> {
                     return repository.save(oldItem.updateFrom(object, partial));
                 });
@@ -38,5 +38,6 @@ public class ContactService {
     public void delete(Long id){
         repository.deleteById(id);
     }
+
 
 }

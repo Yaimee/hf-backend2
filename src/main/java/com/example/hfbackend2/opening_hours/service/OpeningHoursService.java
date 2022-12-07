@@ -1,7 +1,7 @@
-package com.example.hfbackend2.contact.service;
+package com.example.hfbackend2.opening_hours.service;
 
-import com.example.hfbackend2.contact.model.Contact;
-import com.example.hfbackend2.contact.repository.ContactRepository;
+import com.example.hfbackend2.opening_hours.model.OpeningHours;
+import com.example.hfbackend2.opening_hours.repository.OpeningHoursRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,25 +10,26 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @Service
-public class ContactService {
+public class OpeningHoursService {
 
-    private final ContactRepository repository;
 
-    public List<Contact> findAll() {
+    private final OpeningHoursRepository repository;
+
+    public List<OpeningHours> findAll() {
         return repository.findAll();
     }
 
-    public Contact findById(Long id){
+    public OpeningHours findById(Long id){
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("%d not found".formatted(id)));
     }
 
-    public Contact add(Contact object){
+    public OpeningHours add(OpeningHours object){
         return repository.save(object);
     }
 
-    public Contact update(Long id, Contact object, boolean partial){
-        Optional<Contact> temp =  repository.findById(id)
+    public OpeningHours update(Long id, OpeningHours object, boolean partial){
+        Optional<OpeningHours> temp =  repository.findById(id)
                 .map(oldItem -> {
                     return repository.save(oldItem.updateFrom(object, partial));
                 });

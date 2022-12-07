@@ -1,7 +1,7 @@
-package com.example.hfbackend2.contact.service;
+package com.example.hfbackend2.news.service;
 
-import com.example.hfbackend2.contact.model.Contact;
-import com.example.hfbackend2.contact.repository.ContactRepository;
+import com.example.hfbackend2.news.model.News;
+import com.example.hfbackend2.news.repository.NewsRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -10,25 +10,25 @@ import java.util.Optional;
 
 @AllArgsConstructor
 @Service
-public class ContactService {
+public class NewsService {
 
-    private final ContactRepository repository;
+    private final NewsRepository repository;
 
-    public List<Contact> findAll() {
+    public List<News> findAll() {
         return repository.findAll();
     }
 
-    public Contact findById(Long id){
+    public News findById(Long id){
         return repository.findById(id)
                 .orElseThrow(() -> new RuntimeException("%d not found".formatted(id)));
     }
 
-    public Contact add(Contact object){
+    public News add(News object){
         return repository.save(object);
     }
 
-    public Contact update(Long id, Contact object, boolean partial){
-        Optional<Contact> temp =  repository.findById(id)
+    public News update(Long id, News object, boolean partial){
+        Optional<News> temp =  repository.findById(id)
                 .map(oldItem -> {
                     return repository.save(oldItem.updateFrom(object, partial));
                 });
@@ -38,5 +38,4 @@ public class ContactService {
     public void delete(Long id){
         repository.deleteById(id);
     }
-
 }
