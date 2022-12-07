@@ -15,7 +15,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-
+//
 // source: https://www.tutorialspoint.com/spring_security/spring_security_with_jwt.htm
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {

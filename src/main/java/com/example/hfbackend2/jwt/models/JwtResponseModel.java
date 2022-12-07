@@ -1,6 +1,6 @@
 package com.example.hfbackend2.jwt.models;
 import java.io.Serializable;
-
+//
 public class JwtResponseModel implements Serializable {
     /**
      *
