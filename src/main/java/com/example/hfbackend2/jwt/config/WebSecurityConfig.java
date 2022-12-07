@@ -14,6 +14,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+
+
 // source: https://www.tutorialspoint.com/spring_security/spring_security_with_jwt.htm
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
@@ -40,7 +42,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable()
-                .authorizeRequests().antMatchers("/login").permitAll()
+                .authorizeRequests().antMatchers("/login", "/find-all", "/find-by-ID/{id}", "/api/v1/contact", "/api/v1/news", "/api/v1/obs").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint)

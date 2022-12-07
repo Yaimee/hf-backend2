@@ -15,7 +15,7 @@ public class ContactController {
 
     private final ContactService service;
 
-    @GetMapping
+    @GetMapping("/find-all")
     public List<Contact> findAll() {
         List<Contact> objects = service.findAll();
         return objects;
@@ -26,7 +26,7 @@ public class ContactController {
         return service.add(object);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/find-by-ID/{id}")
     public Contact findById(@PathVariable(value = "id") Long id) {
         return service.findById(id);
     }
