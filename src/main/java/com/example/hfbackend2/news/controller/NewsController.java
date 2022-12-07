@@ -11,7 +11,7 @@ import java.util.List;
 @AllArgsConstructor
 @RestController
 @CrossOrigin
-@RequestMapping("/api/v1/news")
+@RequestMapping("/news")
 public class NewsController {
 
     private final NewsService service;

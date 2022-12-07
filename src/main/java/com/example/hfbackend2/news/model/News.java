@@ -36,5 +36,4 @@ public class News {
         if(!partial || object.date!=null) {this.date = object.date;}
         return this;
     }
-
 }
