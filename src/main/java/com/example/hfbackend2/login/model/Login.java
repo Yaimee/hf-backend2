@@ -12,6 +12,9 @@ import javax.persistence.*;
 public class Login {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
     @Column(name = "username")
     private String username;
 

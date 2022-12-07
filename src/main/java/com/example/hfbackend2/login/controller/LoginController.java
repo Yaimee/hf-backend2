@@ -15,12 +15,12 @@ public class LoginController {
     private final LoginService service;
 
     @GetMapping("/{id}")
-    public Login findById(@PathVariable(value = "id") String id) {
+    public Login findById(@PathVariable(value = "id") Long id) {
         return service.findById(id);
     }
 
     @PutMapping("/update-login")
-    public Login put(@Valid @RequestBody Login object){
-        return service.update(object, false);
+    public Login put(Long id, @Valid @RequestBody Login object){
+        return service.update(id,object, false);
     }
 }
