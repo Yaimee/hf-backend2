@@ -15,6 +15,7 @@ public class JwtUserDetailsService implements UserDetailsService {
     private String username = "admin";//service.findById(1L).getUsername();
     private String password = "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6";//service.findById(1L).getPassword();
 
+
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
         if (this.username.equals(username)) {
