@@ -12,8 +12,8 @@ import java.util.ArrayList;
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
     LoginService service;
-    private String username = service.findById(1L).getUsername();
-    private String password = service.findById(1L).getPassword();
+    private String username = "admin";//service.findById(1L).getUsername();
+    private String password = "$2a$10$slYQmyNdGzTn7ZLBXBChFOC9f6kFjAqPhccnP6DxlWXx2lPk1C3G6";//service.findById(1L).getPassword();
 
 
     @Override
