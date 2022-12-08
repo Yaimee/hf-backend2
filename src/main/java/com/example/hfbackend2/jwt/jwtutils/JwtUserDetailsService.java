@@ -8,7 +8,7 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
-//
+//ny
 @Service
 public class JwtUserDetailsService implements UserDetailsService {
     LoginService service;
