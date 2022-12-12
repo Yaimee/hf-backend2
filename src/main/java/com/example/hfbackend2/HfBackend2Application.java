@@ -9,6 +9,7 @@ public class HfBackend2Application {
     public static void main(String[] args) {
         SpringApplication.run(HfBackend2Application.class, args);
         // dette er en test fra tobias
+        //Tester Shaun
     }
 
 }
