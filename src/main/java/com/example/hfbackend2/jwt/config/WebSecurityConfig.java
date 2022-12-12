@@ -25,11 +25,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     private UserDetailsService userDetailsService;
     @Autowired
     private JwtFilter filter;
-
-    PasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return new BCryptPasswordEncoder();
+    }
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder);
+        auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
     }
     @Bean
     @Override
@@ -39,8 +41,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
+        /*http.csrf().disable();
+        http.headers().frameOptions().disable();
+        */
         http.csrf().disable()
-                .authorizeRequests().antMatchers("/login", "/find-all", "/find-by-ID/{id}", "/api/v1/contact", "/api/v1/news", "/api/v1/obs", "/api/v1/login/1", "/hello").permitAll()
+                .authorizeRequests().antMatchers("/login", "/find-all", "/find-by-ID/{id}", "/api/v1/contact/**", "/news/**", "/api/v1/obs", "/api/v1/login/1", "/api/v1/openinghours/**", "/hello", "/h2-console/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
                 .exceptionHandling().authenticationEntryPoint(authenticationEntryPoint)
