@@ -22,6 +22,8 @@ public class OpeningHoursController {
         return objects;
     }
 
+    //Test
+
     @PostMapping
     public OpeningHours add(@Valid @RequestBody OpeningHours object) {
         return service.add(object);
