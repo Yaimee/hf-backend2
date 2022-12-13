@@ -3,6 +3,7 @@ package com.example.hfbackend2.news.controller;
 import com.example.hfbackend2.news.service.NewsService;
 import com.example.hfbackend2.news.model.News;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,41 +18,37 @@ public class NewsController {
     private final NewsService service;
 
     @GetMapping
-    public List<News> findAll() {
-        List<News> objects = service.findAll();
-        return objects;
-    }
-
-    @PostMapping
-    public News add(@Valid @RequestBody News object) {
-        return service.add(object);
+    public ResponseEntity<List<News>> findAll() {
+        return ResponseEntity.ok().body(service.findAll());
     }
 
     @GetMapping("/{id}")
-    public News findById(@PathVariable(value = "id") Long id) {
-        return service.findById(id);
+    public ResponseEntity<News> findById(@PathVariable(value = "id") Long id) {
+        return ResponseEntity.ok().body(service.findById(id));
     }
 
+    @PostMapping
+    public ResponseEntity<News> add(@Valid @RequestBody News object) {
+        return ResponseEntity.ok().body(service.add(object));
+    }
+
+
+
     @DeleteMapping("/{id}")
-    public News delete(@PathVariable("id") Long id) {
+    public ResponseEntity<News> delete(@PathVariable("id") Long id) {
         News result = service.findById(id);
         service.delete(id);
-        return result;
+        return ResponseEntity.ok().body(result);
     }
 
     @PutMapping("/{id}")
-    public News put (@PathVariable("id") Long id, @Valid @RequestBody News object){
-        return service.update(id, object, false);
+    public ResponseEntity<News> put (@PathVariable("id") Long id, @Valid @RequestBody News request){
+        return ResponseEntity.ok().body(service.update(id, request, false));
     }
 
 
     @PatchMapping("/{id}")
-    public News patch(@PathVariable("id") Long id, @Valid @RequestBody News object){
-        return service.update(id, object, true);
-    }
-
-
-    private News update(Long id, News object, boolean partial){
-        return service.update(id, object, partial);
+    public ResponseEntity<News> patch(@PathVariable("id") Long id, @Valid @RequestBody News object){
+        return ResponseEntity.ok().body(service.update(id, object, true));
     }
 }

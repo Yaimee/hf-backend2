@@ -1,8 +1,9 @@
 package com.example.hfbackend2.opening_hours.controller;
 
-import com.example.hfbackend2.opening_hours.service.OpeningHoursService;
 import com.example.hfbackend2.opening_hours.model.OpeningHours;
+import com.example.hfbackend2.opening_hours.service.OpeningHoursService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,43 +18,37 @@ public class OpeningHoursController {
     private final OpeningHoursService service;
 
     @GetMapping
-    public List<OpeningHours> findAll() {
-        List<OpeningHours> objects = service.findAll();
-        return objects;
-    }
-
-    //Test
-
-    @PostMapping
-    public OpeningHours add(@Valid @RequestBody OpeningHours object) {
-        return service.add(object);
+    public ResponseEntity<List<OpeningHours>> findAll() {
+        return ResponseEntity.ok().body(service.findAll());
     }
 
     @GetMapping("/{id}")
-    public OpeningHours findById(@PathVariable(value = "id") Long id) {
-        return service.findById(id);
+    public ResponseEntity<OpeningHours> findById(@PathVariable(value = "id") Long id) {
+        return ResponseEntity.ok().body(service.findById(id));
     }
 
+    @PostMapping
+    public ResponseEntity<OpeningHours> add(@Valid @RequestBody OpeningHours object) {
+        return ResponseEntity.ok().body(service.add(object));
+    }
+
+
+
     @DeleteMapping("/{id}")
-    public OpeningHours delete(@PathVariable("id") Long id) {
+    public ResponseEntity<OpeningHours> delete(@PathVariable("id") Long id) {
         OpeningHours result = service.findById(id);
         service.delete(id);
-        return result;
+        return ResponseEntity.ok().body(result);
     }
 
     @PutMapping("/{id}")
-    public OpeningHours put (@PathVariable("id") Long id, @Valid @RequestBody OpeningHours object){
-        return service.update(id, object, false);
+    public ResponseEntity<OpeningHours> put (@PathVariable("id") Long id, @Valid @RequestBody OpeningHours request){
+        return ResponseEntity.ok().body(service.update(id, request, false));
     }
 
 
     @PatchMapping("/{id}")
-    public OpeningHours patch(@PathVariable("id") Long id, @Valid @RequestBody OpeningHours object){
-        return service.update(id, object, true);
-    }
-
-
-    private OpeningHours update(Long id, OpeningHours object, boolean partial){
-        return service.update(id, object, partial);
+    public ResponseEntity<OpeningHours> patch(@PathVariable("id") Long id, @Valid @RequestBody OpeningHours object){
+        return ResponseEntity.ok().body(service.update(id, object, true));
     }
 }
