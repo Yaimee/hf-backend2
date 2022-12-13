@@ -1,10 +1,9 @@
 package com.example.hfbackend2;
 
-import com.example.hfbackend2.Prices.Price;
-import com.example.hfbackend2.Prices.PriceRepository;
+import com.example.hfbackend2.Prices.model.Price;
+import com.example.hfbackend2.Prices.repository.PriceRepository;
 import com.example.hfbackend2.contact.model.Contact;
 import com.example.hfbackend2.contact.repository.ContactRepository;
-import com.example.hfbackend2.login.model.Login;
 import com.example.hfbackend2.login.repository.LoginRepository;
 import com.example.hfbackend2.news.model.News;
 import com.example.hfbackend2.news.repository.NewsRepository;

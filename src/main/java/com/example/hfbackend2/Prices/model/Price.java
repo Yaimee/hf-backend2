@@ -1,4 +1,4 @@
-package com.example.hfbackend2.Prices;
+package com.example.hfbackend2.Prices.model;
 
 import javax.persistence.*;
 // Written by toby Tobias

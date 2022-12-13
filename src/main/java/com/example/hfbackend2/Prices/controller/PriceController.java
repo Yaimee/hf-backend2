@@ -1,10 +1,10 @@
-package com.example.hfbackend2.Prices;
+package com.example.hfbackend2.Prices.controller;
 
+import com.example.hfbackend2.Prices.service.PriceService;
+import com.example.hfbackend2.Prices.model.Price;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.context.config.ConfigDataResourceNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
-import javax.validation.Valid;
 import java.util.List;
 import java.util.Optional;
 

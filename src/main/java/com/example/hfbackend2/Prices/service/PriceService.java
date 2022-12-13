@@ -1,16 +1,12 @@
-package com.example.hfbackend2.Prices;
+package com.example.hfbackend2.Prices.service;
 
+import com.example.hfbackend2.Prices.model.Price;
+import com.example.hfbackend2.Prices.repository.PriceRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Function;
 
 @Service
 public class PriceService {
