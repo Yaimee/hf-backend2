@@ -41,9 +41,9 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     }
     @Override
     protected void configure(HttpSecurity http) throws Exception {
-        /*http.csrf().disable();
+        http.csrf().disable();
         http.headers().frameOptions().disable();
-        */
+        /*
         http.csrf().disable()
                 .authorizeRequests().antMatchers("/login", "/find-all", "/find-by-ID/{id}", "/api/v1/contact/**", "/news/**", "/api/v1/obs", "/api/v1/login/1", "/api/v1/openinghours/**", "/hello", "/h2-console/**", "/priser/**").permitAll()
                 .anyRequest().authenticated()
@@ -52,5 +52,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
+        */
     }
 }
