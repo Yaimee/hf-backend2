@@ -1,10 +1,8 @@
-package com.example.hfbackend2.jwt.models;
+/*package com.example.hfbackend2.jwt.models;
 import java.io.Serializable;
 //
 public class JwtResponseModel implements Serializable {
-    /**
-     *
-     */
+
     private static final long serialVersionUID = 1L;
     private final String token;
     public JwtResponseModel(String token) {
@@ -13,4 +11,4 @@ public class JwtResponseModel implements Serializable {
     public String getToken() {
         return token;
     }
-}
+}*/
