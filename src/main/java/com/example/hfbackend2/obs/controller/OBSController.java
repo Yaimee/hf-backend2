@@ -3,6 +3,7 @@ package com.example.hfbackend2.obs.controller;
 import com.example.hfbackend2.obs.service.OBSService;
 import com.example.hfbackend2.obs.model.OBS;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -17,41 +18,37 @@ public class OBSController {
     private final OBSService service;
 
     @GetMapping
-    public List<OBS> findAll() {
-        List<OBS> objects = service.findAll();
-        return objects;
-    }
-
-    @PostMapping
-    public OBS add(@Valid @RequestBody OBS object) {
-        return service.add(object);
+    public ResponseEntity<List<OBS>> findAll() {
+        return ResponseEntity.ok().body(service.findAll());
     }
 
     @GetMapping("/{id}")
-    public OBS findById(@PathVariable(value = "id") Long id) {
-        return service.findById(id);
+    public ResponseEntity<OBS> findById(@PathVariable(value = "id") Long id) {
+        return ResponseEntity.ok().body(service.findById(id));
     }
 
+    @PostMapping
+    public ResponseEntity<OBS> add(@Valid @RequestBody OBS object) {
+        return ResponseEntity.ok().body(service.add(object));
+    }
+
+
+
     @DeleteMapping("/{id}")
-    public OBS delete(@PathVariable("id") Long id) {
+    public ResponseEntity<OBS> delete(@PathVariable("id") Long id) {
         OBS result = service.findById(id);
         service.delete(id);
-        return result;
+        return ResponseEntity.ok().body(result);
     }
 
     @PutMapping("/{id}")
-    public OBS put (@PathVariable("id") Long id, @Valid @RequestBody OBS object){
-        return service.update(id, object, false);
+    public ResponseEntity<OBS> put (@PathVariable("id") Long id, @Valid @RequestBody OBS request){
+        return ResponseEntity.ok().body(service.update(id, request, false));
     }
 
 
     @PatchMapping("/{id}")
-    public OBS patch(@PathVariable("id") Long id, @Valid @RequestBody OBS object){
-        return service.update(id, object, true);
-    }
-
-
-    private OBS update(Long id, OBS object, boolean partial){
-        return service.update(id, object, partial);
+    public ResponseEntity<OBS> patch(@PathVariable("id") Long id, @Valid @RequestBody OBS object){
+        return ResponseEntity.ok().body(service.update(id, object, true));
     }
 }

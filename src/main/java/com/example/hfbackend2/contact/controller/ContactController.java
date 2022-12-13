@@ -3,6 +3,7 @@ package com.example.hfbackend2.contact.controller;
 import com.example.hfbackend2.contact.model.Contact;
 import com.example.hfbackend2.contact.service.ContactService;
 import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -15,42 +16,38 @@ public class ContactController {
 
     private final ContactService service;
 
-    @GetMapping("/find-all")
-    public List<Contact> findAll() {
-        List<Contact> objects = service.findAll();
-        return objects;
+    @GetMapping
+    public ResponseEntity<List<Contact>> findAll() {
+        return ResponseEntity.ok().body(service.findAll());
+    }
+
+    @GetMapping("/{id}")
+    public ResponseEntity<Contact> findById(@PathVariable(value = "id") Long id) {
+        return ResponseEntity.ok().body(service.findById(id));
     }
 
     @PostMapping
-    public Contact add(@Valid @RequestBody Contact object) {
-        return service.add(object);
+    public ResponseEntity<Contact> add(@Valid @RequestBody Contact object) {
+        return ResponseEntity.ok().body(service.add(object));
     }
 
-    @GetMapping("/find-by-ID/{id}")
-    public Contact findById(@PathVariable(value = "id") Long id) {
-        return service.findById(id);
-    }
+
 
     @DeleteMapping("/{id}")
-    public Contact delete(@PathVariable("id") Long id) {
+    public ResponseEntity<Contact> delete(@PathVariable("id") Long id) {
         Contact result = service.findById(id);
         service.delete(id);
-        return result;
+        return ResponseEntity.ok().body(result);
     }
 
     @PutMapping("/{id}")
-    public Contact put (@PathVariable("id") Long id, @Valid @RequestBody Contact object){
-        return service.update(id, object, false);
+    public ResponseEntity<Contact> put (@PathVariable("id") Long id, @Valid @RequestBody Contact request){
+        return ResponseEntity.ok().body(service.update(id, request, false));
     }
 
 
     @PatchMapping("/{id}")
-    public Contact patch(@PathVariable("id") Long id, @Valid @RequestBody Contact object){
-        return service.update(id, object, true);
-    }
-
-
-    private Contact update(Long id, Contact object, boolean partial){
-        return service.update(id, object, partial);
+    public ResponseEntity<Contact> patch(@PathVariable("id") Long id, @Valid @RequestBody Contact object){
+        return ResponseEntity.ok().body(service.update(id, object, true));
     }
 }
