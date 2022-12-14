@@ -84,12 +84,6 @@ public class HfBackend2Application {
             final List<OpeningHours> openingHoursList = new ArrayList<>();
             log.info("Creating Opening Hours");
             openingHoursList.add(new OpeningHours("Mandag, tirsdag og fredag", "9:00 - 18:00", "Lørdag og søndag:", "9:00 - 16:00", "Onsdag og torsdag","lukket"));
-            openingHoursList.add(new OpeningHours("Field 1 : Two", "Time 1 : Two", "Field 2 : Two", "Time 2 : Two", "Field 3 : Two", "Time 3 : Two"));
-            openingHoursList.add(new OpeningHours("Field 1 : Three", "Time 1 : Three", "Field 2 : Three", "Time 2 : Three", "Field 3 : Three", "Time 3 : Three"));
-            openingHoursList.add(new OpeningHours("Field 1 : Four", "Time 1 : Four", "Field 2 : Four", "Time 2 : Four", "Field 3 : Four", "Time 3 : Four"));
-            openingHoursList.add(new OpeningHours("Field 1 : Five", "Time 1 : Five", "Field 2 : Five", "Time 2 : Five", "Field 3 : Five", "Time 3 : Five"));
-            openingHoursList.add(new OpeningHours("Field 1 : Six", "Time 1 : Six", "Field 2 : Six", "Time 2 : Six", "Field 3 : Six", "Time 3 : Six"));
-            openingHoursList.add(new OpeningHours("Field 1 : Seven", "Time 1 : Seven", "Field 2 : Seven", "Time 2 : Seven", "Field 3 : Seven", "Time 3 : Seven"));
             log.info("Opening Hours created");
             openingHoursRepository.saveAll(openingHoursList);
             log.info("Opening Hours Saved");
