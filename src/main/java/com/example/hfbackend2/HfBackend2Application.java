@@ -37,6 +37,7 @@ public class HfBackend2Application {
                                         LoginRepository loginRepository) {
         return (args) -> {
             /*
+            Test 1
             Contact : phoneNumber, email, address
             News : title, text, date
             OBS : text, date
