@@ -1,4 +1,4 @@
-/*package com.example.hfbackend2.jwt.jwtutils;
+package com.example.hfbackend2.jwt.jwtutils;
 
 import com.example.hfbackend2.jwt.models.JwtRequestModel;
 import com.example.hfbackend2.jwt.models.JwtResponseModel;
@@ -41,4 +41,4 @@ public class JwtController {
         final String jwtToken = tokenManager.generateJwtToken(userDetails);
         return ResponseEntity.ok(new JwtResponseModel(jwtToken));
     }
-}*/
+}

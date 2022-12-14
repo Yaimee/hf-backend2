@@ -1,4 +1,4 @@
-/*package com.example.hfbackend2.jwt.jwtutils;
+package com.example.hfbackend2.jwt.jwtutils;
 
 
 import org.springframework.security.core.userdetails.User;
@@ -21,4 +21,4 @@ public class JwtUserDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found with username: " + username);
         }
     }
-}*/
+}

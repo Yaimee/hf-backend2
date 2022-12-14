@@ -1,4 +1,4 @@
-/*package com.example.hfbackend2.jwt.config;
+package com.example.hfbackend2.jwt.config;
 
 import com.example.hfbackend2.jwt.jwtutils.JwtAuthenticationEntryPoint;
 import com.example.hfbackend2.jwt.jwtutils.JwtFilter;
@@ -15,8 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
-
- source: https://www.tutorialspoint.com/spring_security/spring_security_with_jwt.htm
+//
+// source: https://www.tutorialspoint.com/spring_security/spring_security_with_jwt.htm
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Autowired
@@ -43,7 +43,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http.csrf().disable();
         http.headers().frameOptions().disable();
-
+        /*
         http.csrf().disable()
                 .authorizeRequests().antMatchers("/login", "/find-all", "/find-by-ID/{id}", "/api/v1/contact/**", "/news/**", "/api/v1/obs", "/api/v1/login/1", "/api/v1/openinghours/**", "/hello", "/h2-console/**", "/priser/**").permitAll()
                 .anyRequest().authenticated()
@@ -52,6 +52,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
-
+        */
     }
-}*/
+}

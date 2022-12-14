@@ -1,4 +1,4 @@
-/*package com.example.hfbackend2.jwt.jwtutils;
+package com.example.hfbackend2.jwt.jwtutils;
 
 import io.jsonwebtoken.ExpiredJwtException;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,4 +55,4 @@ public class JwtFilter extends OncePerRequestFilter {
         }
         filterChain.doFilter(request, response);
     }
-}*/
+}
