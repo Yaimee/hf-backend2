@@ -40,8 +40,4 @@ public class PriceService {
         }
         return priceRepository.save(price);
     }
-
-    public void deleteById(Long priceId) {
-        priceRepository.deleteById(priceId);
-    }
 }

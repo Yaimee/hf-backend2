@@ -3,7 +3,6 @@ package com.example.hfbackend2.Prices.controller;
 import com.example.hfbackend2.Prices.service.PriceService;
 import com.example.hfbackend2.Prices.model.Price;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -22,24 +21,17 @@ public class PriceController {
         this.priceService = priceService;
     }
 
-    @GetMapping
-    public ResponseEntity<List<Price>> getPrices() {return ResponseEntity.ok().body(priceService.getPrices());}
+    @GetMapping("/")
+    public List<Price> getPrices() {return priceService.getPrices();}
 
-    @GetMapping("/{priceId}")
+    @GetMapping(path = "/{priceId}")
     // pathvariable bruges til at definere en variabel i sit endpoint
-    public ResponseEntity<Optional<Price>> getPriceById(@PathVariable("priceId") Long priceId) {
-        return ResponseEntity.ok().body(priceService.getPriceById(priceId));
+    public Optional<Price> getPriceById(@PathVariable("priceId") Long priceId) {
+        return priceService.getPriceById(priceId);
     }
 
     @PostMapping("/addPrice")
     public void registerNewPrice(@RequestBody Price price) { priceService.addNewPrice(price);
-    }
-
-    @DeleteMapping("/{priceId}")
-    public ResponseEntity<Optional<Price>> deletePrice(@PathVariable("priceId") Long priceId) {
-        Optional<Price> result = priceService.getPriceById(priceId);
-        priceService.deleteById(priceId);
-        return ResponseEntity.ok().body(result);
     }
 
     @PutMapping(path = "/{priceId}")
