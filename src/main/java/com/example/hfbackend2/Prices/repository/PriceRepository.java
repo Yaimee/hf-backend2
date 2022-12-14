@@ -1,5 +1,6 @@
 package com.example.hfbackend2.Prices.repository;
 
+
 import com.example.hfbackend2.Prices.model.Price;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
