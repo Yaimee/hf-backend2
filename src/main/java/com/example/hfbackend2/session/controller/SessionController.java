@@ -1,4 +1,4 @@
-/*package com.example.hfbackend2.session.controller;
+package com.example.hfbackend2.session.controller;
 
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -9,4 +9,4 @@ public class SessionController {
     public String helloAdmin() {
         return "hello admin";
     }
-}*/
+}

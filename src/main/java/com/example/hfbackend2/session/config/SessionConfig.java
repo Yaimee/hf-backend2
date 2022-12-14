@@ -1,4 +1,4 @@
-/*package com.example.hfbackend2.session.config;
+package com.example.hfbackend2.session.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -13,4 +13,4 @@ public class SessionConfig extends AbstractHttpSessionApplicationInitializer {
     public JedisConnectionFactory connectionFactory() {
         return new JedisConnectionFactory();
     }
-}*/
+}
