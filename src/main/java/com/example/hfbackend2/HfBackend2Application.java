@@ -83,7 +83,7 @@ public class HfBackend2Application {
 
             final List<OpeningHours> openingHoursList = new ArrayList<>();
             log.info("Creating Opening Hours");
-            openingHoursList.add(new OpeningHours("Field 1 : One", "Time 1 : One", "Field 2 : One", "Time 2 : One", "Field 3 : One", "Time 3 : One"));
+            openingHoursList.add(new OpeningHours("Mandag, tirsdag og fredag", "9:00 - 18:00", "Lørdag og søndag:", "9:00 - 16:00", "Onsdag og torsdag","lukket"));
             openingHoursList.add(new OpeningHours("Field 1 : Two", "Time 1 : Two", "Field 2 : Two", "Time 2 : Two", "Field 3 : Two", "Time 3 : Two"));
             openingHoursList.add(new OpeningHours("Field 1 : Three", "Time 1 : Three", "Field 2 : Three", "Time 2 : Three", "Field 3 : Three", "Time 3 : Three"));
             openingHoursList.add(new OpeningHours("Field 1 : Four", "Time 1 : Four", "Field 2 : Four", "Time 2 : Four", "Field 3 : Four", "Time 3 : Four"));
@@ -96,13 +96,14 @@ public class HfBackend2Application {
 
             final List<Price> prices = new ArrayList<>();
             log.info("Creating Prices");
-            prices.add(new Price("Item 1", 1));
-            prices.add(new Price("Item 2", 2));
-            prices.add(new Price("Item 3", 3));
-            prices.add(new Price("Item 4", 4));
-            prices.add(new Price("Item 5", 5));
-            prices.add(new Price("Item 6", 6));
-            prices.add(new Price("Item 7", 7));
+            prices.add(new Price("klip-1",700));
+            prices.add(new Price("klip-2",800));
+            prices.add(new Price("klip-3",950));
+            prices.add(new Price("klip-4",200));
+            prices.add(new Price("trimming-1",850));
+            prices.add(new Price("Touch-up-1",550));
+            prices.add(new Price("Touch-up-2",650));
+            prices.add(new Price("Tillæg-1",250));
             log.info("Prices created");
             priceRepository.saveAll(prices);
             log.info("Prices saved");
