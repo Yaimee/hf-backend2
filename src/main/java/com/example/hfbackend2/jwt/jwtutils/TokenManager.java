@@ -1,4 +1,4 @@
-package com.example.hfbackend2.jwt.jwtutils;
+/*package com.example.hfbackend2.jwt.jwtutils;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
@@ -11,12 +11,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
-//
+
 @Component
 public class TokenManager implements Serializable {
-    /**
-     *
-     */
+
     private static final long serialVersionUID = 7008375124389347049L; public static final long TOKEN_VALIDITY = 10 * 60 * 60; @Value("${secret}")
     private String jwtSecret;
     public String generateJwtToken(UserDetails userDetails) {
@@ -36,4 +34,4 @@ public class TokenManager implements Serializable {
         final Claims claims = Jwts.parser().setSigningKey(jwtSecret).parseClaimsJws(token).getBody();
         return claims.getSubject();
     }
-}
+}*/
