@@ -1,4 +1,4 @@
-/*package com.example.hfbackend2.jwt.config;
+package com.example.hfbackend2.jwt.config;
 
 import com.example.hfbackend2.jwt.jwtutils.JwtAuthenticationEntryPoint;
 import com.example.hfbackend2.jwt.jwtutils.JwtFilter;
@@ -44,7 +44,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable();
         http.headers().frameOptions().disable();
         /*
-        hp.csrf().disable()
+        http.csrf().disable()
                 .authorizeRequests().antMatchers("/login", "/find-all", "/find-by-ID/{id}", "/api/v1/contact/**", "/news/**", "/api/v1/obs", "/api/v1/login/1", "/api/v1/openinghours/**", "/hello", "/h2-console/**", "/priser/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
@@ -52,6 +52,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
         http.addFilterBefore(filter, UsernamePasswordAuthenticationFilter.class);
-
+        */
     }
-}*/
+}

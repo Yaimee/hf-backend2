@@ -1,4 +1,4 @@
-/*package com.example.hfbackend2.jwt.jwtutils;
+package com.example.hfbackend2.jwt.jwtutils;
 
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.web.AuthenticationEntryPoint;
@@ -21,4 +21,4 @@ public class JwtAuthenticationEntryPoint implements AuthenticationEntryPoint,
         response.sendError(HttpServletResponse.SC_UNAUTHORIZED,
                 "Unauthorized");
     }
-}*/
+}
