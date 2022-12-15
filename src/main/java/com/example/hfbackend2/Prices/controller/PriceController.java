@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Optional;
 
 @RestController
-// husk cross origin er vigtig for at kunne hente fra databasen eller kan man ikke gøre det pga cors
+// CrossOrigin is important to be able to download from the database, otherwise you can't do it due to the cors policy
 @CrossOrigin
 @RequestMapping("api/v1/price")
 public class PriceController {
@@ -25,7 +25,7 @@ public class PriceController {
     public List<Price> getPrices() {return priceService.getPrices();}
 
     @GetMapping(path = "/{priceId}")
-    // pathvariable bruges til at definere en variabel i sit endpoint
+    // pathvariable is used to define a variable in its endpoint
     public Optional<Price> getPriceById(@PathVariable("priceId") Long priceId) {
         return priceService.getPriceById(priceId);
     }

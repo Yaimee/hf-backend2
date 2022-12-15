@@ -4,7 +4,7 @@ import javax.persistence.*;
 // Written by toby Tobias
 @Entity
 @Table
-// Er til database
+// is for database
 public class Price {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
