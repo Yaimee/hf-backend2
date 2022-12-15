@@ -49,10 +49,6 @@ public class HfBackend2Application {
             final List<Contact> contacts = new ArrayList<>();
             log.info("Creating Contacts");
             contacts.add(new Contact("11111111", "email1@email.com", "address 1"));
-            contacts.add(new Contact("22222222", "email2@email.com", "address 2"));
-            contacts.add(new Contact("33333333", "email3@email.com", "address 3"));
-            contacts.add(new Contact("44444444", "email4@email.com", "address 4"));
-            contacts.add(new Contact("55555555", "email5@email.com", "address 5"));
             log.info("Contacts created");
             contactRepository.saveAll(contacts);
             log.info("Contacts saved");

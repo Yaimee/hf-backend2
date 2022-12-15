@@ -52,8 +52,24 @@ public class ContactController {
         return ResponseEntity.ok().body(service.update(1L, contactToUpdate, false));
     }
 
+    @PutMapping("/update-email")
+    public ResponseEntity<Contact> updateEmail(@Valid @RequestBody Contact request){
+        Contact contactToUpdate = service.findById(1L);
+        contactToUpdate.setEmail(request.getEmail());
+        return ResponseEntity.ok().body(service.update(1L, contactToUpdate, false));
+    }
+
+    @PutMapping("/update-address")
+    public ResponseEntity<Contact> updateAddress(@Valid @RequestBody Contact request){
+        Contact contactToUpdate = service.findById(1L);
+        contactToUpdate.setAddress(request.getAddress());
+        return ResponseEntity.ok().body(service.update(1L, contactToUpdate, false));
+    }
+
     @PatchMapping("/{id}")
     public ResponseEntity<Contact> patch(@PathVariable("id") Long id, @Valid @RequestBody Contact object){
         return ResponseEntity.ok().body(service.update(id, object, true));
     }
+
+
 }
