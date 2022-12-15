@@ -1,6 +1,4 @@
 package com.example.hfbackend2.news.controller;
-
-import com.example.hfbackend2.contact.model.Contact;
 import com.example.hfbackend2.news.service.NewsService;
 import com.example.hfbackend2.news.model.News;
 import lombok.AllArgsConstructor;
