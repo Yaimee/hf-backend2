@@ -15,7 +15,7 @@ import java.util.List;
 @CrossOrigin
 @RequestMapping("/news")
 public class NewsController {
-//
+
     private final NewsService service;
 
     @GetMapping
