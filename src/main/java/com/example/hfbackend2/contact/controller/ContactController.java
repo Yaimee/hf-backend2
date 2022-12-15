@@ -45,6 +45,12 @@ public class ContactController {
         return ResponseEntity.ok().body(service.update(id, request, false));
     }
 
+    @PutMapping("/update-phone")
+    public ResponseEntity<Contact> updatePhone (@Valid @RequestBody Contact request){
+        Contact contactToUpdate = service.findById(1L);
+        contactToUpdate.setPhoneNumber(request.getPhoneNumber());
+        return ResponseEntity.ok().body(service.update(1L, contactToUpdate, false));
+    }
 
     @PatchMapping("/{id}")
     public ResponseEntity<Contact> patch(@PathVariable("id") Long id, @Valid @RequestBody Contact object){
