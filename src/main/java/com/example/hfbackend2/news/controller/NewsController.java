@@ -1,5 +1,6 @@
 package com.example.hfbackend2.news.controller;
 
+import com.example.hfbackend2.contact.model.Contact;
 import com.example.hfbackend2.news.service.NewsService;
 import com.example.hfbackend2.news.model.News;
 import lombok.AllArgsConstructor;
@@ -27,14 +28,12 @@ public class NewsController {
         return ResponseEntity.ok().body(service.findById(id));
     }
 
-    @PostMapping
+    @PostMapping("/post-news")
     public ResponseEntity<News> add(@Valid @RequestBody News object) {
         return ResponseEntity.ok().body(service.add(object));
     }
 
-
-
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<News> delete(@PathVariable("id") Long id) {
         News result = service.findById(id);
         service.delete(id);
